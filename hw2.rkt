@@ -8,7 +8,7 @@
 (define WINDOW-WIDTH  100)
 (define OFFSET (/ WINDOW-WIDTH 2))
 (define WINDOW (empty-scene WINDOW-WIDTH WINDOW-HEIGHT))
-(define ROCKET (bitmap "rocket.png"))
+(define ROCKET (rectangle 5 30 "solid" "red"))
 (define ROCKET-CENTER (/ (image-height ROCKET) 2))
 (define SPEED 3)
 
@@ -38,7 +38,7 @@
                                OFFSET (- WINDOW-HEIGHT ROCKET-CENTER)
                                WINDOW))]
     [(>= x 0)
-     (place-image ROCKET OFFSET (- x ROCKET-CENTER) WINDOW)]))
+     (place-image ROCKET OFFSET (- x ROCKET-CENTER) WINDOW)])))
 
 ; LRCD KeyEvent -> LRCD
 ; starts the countdown when space bar is pressed, 
